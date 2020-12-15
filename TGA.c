@@ -1,5 +1,4 @@
 
-
 void save_pgm(char* filename, Pixel* pixels, unsigned char* arr, int cols, int rows, int scale)
 {
     char buff[255];
@@ -25,18 +24,21 @@ int main(void) {
     uint16_t rows = 500;
     uint16_t cols = 1000;
 
-    TGA_Header header = {0,0,2,0,0,0,0,0, cols, rows,24,0};
-    Pixel* pixels = (Pixel*) malloc(sizeof(Pixel) * rows * cols);
-
-    for (int i = 0; i < rows; i++)
-    {
-        for (int j = 0; j < cols; j++)
-        {
-            pixels[i * cols + j].R = rand() % 255;
-            pixels[i * cols + j].G = rand() % 255;
-            pixels[i * cols + j].B = rand() % 255;
-        }
-    }
+     for(p = buffer, q = base64; *q; q++) {
+        if(isspace(*q))
+            continue;
+        else if(isupper(*q))
+            sextet = *q - 'A';
+        else if(islower(*q))
+            sextet = *q - 'a' + 26;
+        else if(isdigit(*q))
+            sextet = *q - '0' + 52;
+        else if(*q == '+')
+            sextet = 62;
+        else if(*q == '/')
+            sextet = 63;
+        else if(*q == '=')
+            break;
 
     for (int j = 0; j < cols; j++)
     {
